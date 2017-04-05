@@ -6,29 +6,13 @@ public class Livre {
 	
 	private String nom, genre, auteur;
 	private boolean dispo = true;
-	private LocalDate dateRendu = null;
-	
-	
 
 	public Livre(String nom, String genre, String auteur) {
 		this.nom = nom;
 		this.genre = genre;
 		this.auteur = auteur;
 	}
-	
-	public void reserver () {
-		dispo = false;
-		dateRendu = LocalDate.now().plusDays(15);
-	}
-	
-	public void rendre () {
-		dispo = true;
-		dateRendu = null;
-	}
 
-	public LocalDate getDateRendu() {
-		return dateRendu;
-	}
 
 	public String getNom() {
 		return nom;
