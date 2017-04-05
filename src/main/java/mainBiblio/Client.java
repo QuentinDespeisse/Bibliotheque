@@ -3,14 +3,14 @@ package mainBiblio;
 public class Client {
 	
 	private String nom, prenom, email;
-	private int num, tel;
+	private int numCl, tel;
 	
-	public Client(String nom, String prenom, String email, int num, int tel) {
+	public Client(String nom, String prenom, String email, int numCl, int tel) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
-		this.num = num;
+		this.numCl = numCl;
 		this.tel = tel;
 	}
 	
