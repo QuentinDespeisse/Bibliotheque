@@ -1,9 +1,13 @@
 package mainBiblio;
 
+import java.time.LocalDate;
+
 public class Livre {
 	
 	private String nom, genre, auteur;
-	private boolean dispo;
+	private boolean dispo = true;
+	private LocalDate dateRendu = null;
+	
 	
 
 	public Livre(String nom, String genre, String auteur) {
@@ -11,7 +15,17 @@ public class Livre {
 		this.genre = genre;
 		this.auteur = auteur;
 	}
-
+	
+	public LocalDate reserver () {
+		dispo = false;
+		dateRendu = LocalDate.now().plusDays(15);
+		return dateRendu;
+	}
+	
+	public void rendre () {
+		dispo = true;
+		dateRendu = null;
+	}
 
 	public String getNom() {
 		return nom;
