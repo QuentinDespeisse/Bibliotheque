@@ -11,7 +11,7 @@ public class Bibliotheque {
 	private List<Livre> listLivre;
 	private List<String> listSuggestion;
 	private Map<Client, String> reservation = new HashMap<Client, String>();
-	private Map<Client, String> emprunt = new HashMap<Client, String>();
+	private Map<Client, Livre> emprunt = new HashMap<Client, Livre>();
 	
 	private Bibliotheque() {
 		listLivre = new ArrayList<Livre>();
@@ -61,7 +61,7 @@ public class Bibliotheque {
 		boolean reserve = false;
 		for (Livre livre : getLivreNom(titre)){
 			if(livre.isDispo()){
-				emprunt.put(client, titre);
+				emprunt.put(client, livre);
 				livre.setDispo(false);
 				reserve = true;
 			}
@@ -71,7 +71,9 @@ public class Bibliotheque {
 	}
 	
 	public void rendreEmprunt(Client client) {
+		emprunt.get(client).setDispo(true);
 		emprunt.remove(client);
+		
 	}
 	
 	public void ajouterSuggestion(String titre) {
