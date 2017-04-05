@@ -23,4 +23,9 @@ public class Client {
 		Bibliotheque.getInstance().ajouterSuggestion(titre);
 		
 	}
+	
+	public void emprunter (String titre) {
+		Bibliotheque.getInstance().ajouterEmprunt(titre, this);
+	
+	}
 }
