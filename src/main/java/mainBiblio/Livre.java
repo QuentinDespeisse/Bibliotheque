@@ -16,15 +16,18 @@ public class Livre {
 		this.auteur = auteur;
 	}
 	
-	public LocalDate reserver () {
+	public void reserver () {
 		dispo = false;
 		dateRendu = LocalDate.now().plusDays(15);
-		return dateRendu;
 	}
 	
 	public void rendre () {
 		dispo = true;
 		dateRendu = null;
+	}
+
+	public LocalDate getDateRendu() {
+		return dateRendu;
 	}
 
 	public String getNom() {
