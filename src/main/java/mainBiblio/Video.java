@@ -1,15 +1,14 @@
 package mainBiblio;
 
+public class Video {
 
-public class Livre {
-	
-	private String nom, genre, auteur;
+	private String nom, genre, realisateur;
 	private boolean dispo = true;
 
-	public Livre(String nom, String genre, String auteur) {
+	public Video(String nom, String genre, String auteur) {
 		this.nom = nom;
 		this.genre = genre;
-		this.auteur = auteur;
+		this.realisateur = auteur;
 	}
 	
 	public String getNom() {
@@ -20,8 +19,8 @@ public class Livre {
 		return genre;
 	}
 
-	public String getAuteur() {
-		return auteur;
+	public String getRealisateur() {
+		return realisateur;
 	}
 
 	public boolean isDispo() {
@@ -31,4 +30,5 @@ public class Livre {
 	public void setDispo(boolean dispo) {
 		this.dispo = dispo;
 	}
+
 }
