@@ -1,34 +1,19 @@
 package mainBiblio;
 
 
-public class Livre {
+public class Livre extends Article {
 	
-	private String nom, genre, auteur;
-	private boolean dispo = true;
+	private String auteur;
 
 	public Livre(String nom, String genre, String auteur) {
-		this.nom = nom;
-		this.genre = genre;
+		super(nom, genre, "Livre");
 		this.auteur = auteur;
 	}
 	
-	public String getNom() {
-		return nom;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
+	
 
 	public String getAuteur() {
 		return auteur;
 	}
 
-	public boolean isDispo() {
-		return dispo;
-	}
-
-	public void setDispo(boolean dispo) {
-		this.dispo = dispo;
-	}
 }

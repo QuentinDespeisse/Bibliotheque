@@ -1,34 +1,18 @@
 package mainBiblio;
 
-public class Video {
+public class Video extends Article{
 
-	private String nom, genre, realisateur;
-	private boolean dispo = true;
+	private String realisateur;
 
 	public Video(String nom, String genre, String auteur) {
-		this.nom = nom;
-		this.genre = genre;
+		super(nom, genre, "Video");
 		this.realisateur = auteur;
 	}
 	
-	public String getNom() {
-		return nom;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
 
 	public String getRealisateur() {
 		return realisateur;
 	}
 
-	public boolean isDispo() {
-		return dispo;
-	}
-
-	public void setDispo(boolean dispo) {
-		this.dispo = dispo;
-	}
 
 }
