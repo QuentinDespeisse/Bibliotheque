@@ -4,7 +4,7 @@ public class Article {
 
 	protected String nom;
 	protected String genre;
-	private boolean dispo = true;
+	protected boolean dispo = true;
 	protected String type;
 
 	public Article(String nom, String genre, String type) {

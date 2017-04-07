@@ -13,20 +13,25 @@ public class LivreTest {
 		assertEquals(livre.getNom(), "Harry Potter");
 	}
 	
+	@Test
 	public void testLivreAuteur() {
 		assertEquals(livre.getAuteur(), "J.K Rowling");
 	}
 	
+	@Test
 	public void testLivreGenre() {
 		assertEquals(livre.getGenre(), "Fantastique");
 	}
 	
+	@Test
 	public void testLivreDispo() {
 		assertEquals(livre.isDispo(), true);
 	}
 	
+	@Test
 	public void testToString() {
-		assertEquals(livre.toString(), "Harry Potter, Fantastique écrit par J.K Rowling");
+		String test  = livre.toString();
+		assertEquals(test, "Harry Potter, Fantastique écrit par J.K Rowling --> Disponible");
 	}
 
 }
