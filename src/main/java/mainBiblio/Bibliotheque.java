@@ -8,64 +8,57 @@ import java.util.Map;
 public class Bibliotheque {
 
 	private static Bibliotheque instance = new Bibliotheque();
-	private List<Livre> listLivre;
+	private List<Article> listArticle;
 	private List<String> listSuggestion;
-	private Map<Client, String> reservation = new HashMap<Client, String>();
-	private Map<Client, Livre> emprunt = new HashMap<Client, Livre>();
+	private Map<Client, Article> reservation = new HashMap<Client, Article>();
+	private Map<Client, Article> emprunt = new HashMap<Client, Article>();
 	
 	private Bibliotheque() {
-		listLivre = new ArrayList<Livre>();
+		listArticle = new ArrayList<Article>();
 		listSuggestion = new ArrayList<String>();
 	}
 	
-	public static Bibliotheque getInstance() {
-		return instance;
-	}
+	public static Bibliotheque getInstance() {return instance;}
 	
-	public List<Livre> getLivreGenre(String genre) {
-		List<Livre> livresGenre = new ArrayList<Livre>();
-		for(Livre livre: listLivre ){
-			if (livre.getGenre().equals(genre)){
-				livresGenre.add(livre);
-			}
+	public List<Article> getLivreGenre(String genre) {
+		List<Article> articlesGenre = new ArrayList<Article>();
+		for(Article livre: listArticle ){
+			if (livre.getGenre().equals(genre)) 
+				articlesGenre.add(livre);
 		}
-		return livresGenre;
+		return articlesGenre;
 	}
 	
-	public List<Livre> getLivreNom(String nom) {
-		List<Livre> livresNom = new ArrayList<Livre>();
-		for(Livre livre: listLivre ){
-			if (livre.getNom().equals(nom)){
-				livresNom.add(livre);
-			}
+	public List<Article> getLivreNom(String nom) {
+		List<Article> articlesNom = new ArrayList<Article>();
+		for(Article livre: listArticle ){
+			if (livre.getNom().equals(nom))
+				articlesNom.add(livre);
 		}
-		return livresNom;
+		return articlesNom;
 	}
 	
-	public List<Livre> getLivreAuteur(String auteur) {
-		List<Livre> livresAuteur = new ArrayList<Livre>();
-		for(Livre livre: listLivre ){
-			if (livre.getNom().equals(auteur)){
-				livresAuteur.add(livre);
-			}
+	public List<Article> getLivreAuteur(String auteur) {
+		List<Article> articlesAuteur = new ArrayList<Article>();
+		for(Article livre: listArticle ){
+			if (livre.getNom().equals(auteur))
+				articlesAuteur.add(livre);
 		}
-		return livresAuteur;
+		return articlesAuteur;
 	}
 	
-	public void ajouterReservation(String titre, Client client) {
-		reservation.put(client, titre);
-
+	public void ajouterReservation(Article article, Client client) {
+		reservation.put(client, article);
 	}
 	
 	public boolean ajouterEmprunt(String titre, Client client) {
 		boolean reserve = false;
-		for (Livre livre : getLivreNom(titre)){
+		for (Article livre : getLivreNom(titre)){
 			if(livre.isDispo()){
 				emprunt.put(client, livre);
 				livre.setDispo(false);
 				reserve = true;
 			}
-
 		}
 		return reserve;
 	}
@@ -73,16 +66,10 @@ public class Bibliotheque {
 	public void rendreEmprunt(Client client) {
 		emprunt.get(client).setDispo(true);
 		emprunt.remove(client);
-		
 	}
 	
-	public void ajouterSuggestion(String titre) {
-		listSuggestion.add(titre);
-
-	}
+	public void ajouterSuggestion(String titre) {listSuggestion.add(titre);}
 	
-	public void addLivre(Livre livre) {
-		listLivre.add(livre);
-	}
+	public void addArticles(Article article) {listArticle.add(article);}
 	
 }
