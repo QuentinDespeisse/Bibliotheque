@@ -8,7 +8,7 @@ import java.util.Map;
 public class Bibliotheque {
 
 	private static Bibliotheque instance = new Bibliotheque();
-	private List<Article> listArticle;
+	private static ArrayList<Article> listArticle;
 	private List<String> listSuggestion;
 	private Map<Client, Article> reservation = new HashMap<Client, Article>();
 	private Map<Client, Article> emprunt = new HashMap<Client, Article>();
@@ -31,7 +31,7 @@ public class Bibliotheque {
 	}
 	
 
-	public List<Article> getLivreNom(String nom) {
+	public List<Article> getArticleByNom(String nom) {
 		List<Article> articlesNom = new ArrayList<Article>();
 		for(Article livre: listArticle ){
 			if (livre.getNom().equals(nom))
@@ -41,7 +41,7 @@ public class Bibliotheque {
 	}
 	
 
-	public List<Article> getLivreAuteur(String auteur) {
+	public List<Article> getLivreByAuteur(String auteur) {
 		List<Article> articlesAuteur = new ArrayList<Article>();
 		for(Article livre: listArticle ){
 			if (livre.getNom().equals(auteur))
@@ -55,15 +55,13 @@ public class Bibliotheque {
 		reservation.put(client, article);
 	}
 	
-	public boolean ajouterEmprunt(String titre, Client client) {
+	public boolean ajouterEmprunt(Article article, Client client) {
 		boolean reserve = false;
-		for (Article livre : getLivreNom(titre)){
-			if(livre.isDispo()){
-				emprunt.put(client, livre);
-				livre.setDispo(false);
+			if(article.isDispo()){
+				emprunt.put(client, article);
+				article.setDispo(false);
 				reserve = true;
 			}
-		}
 		return reserve;
 	}
 	
@@ -76,5 +74,37 @@ public class Bibliotheque {
 	
 
 	public void addArticles(Article article) {listArticle.add(article);}
+	
+	public void showArticles(){
+		String listeArticles = "";
+		for(Article article : listArticle){
+			listeArticles += article.toString();
+			listeArticles += '\n';
+		}
+		
+		System.out.println(listeArticles);
+	}
+	
+	public static ArrayList<Article> TriAlphabetique()
+	{
+		Integer i, j, min;
+		Article article;
+		for(i = 0; i < listArticle.size(); i++)
+		{
+			min = i;
+			for(j = i; j < listArticle.size(); j++)
+			{				
+				if(listArticle.get(min).getNom().compareTo(listArticle.get(j).getNom()) > 0)
+				{					
+					min = j;
+				}
+			}
+			article = listArticle.get(i);
+			listArticle.set(i, listArticle.get(min));
+			listArticle.set(min, article);			
+		}
+		return listArticle;		
+	}
+
 	
 }

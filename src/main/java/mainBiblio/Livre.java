@@ -17,7 +17,7 @@ public class Livre extends Article {
 	}
 	
 	public String toString() {
-		return nom + ", " + genre + " écrit par " + auteur + " --> " + (dispo?"Disponible":"Pris");
+		return nom + ", " + genre + " écrit par " + auteur;
 	}
 
 }

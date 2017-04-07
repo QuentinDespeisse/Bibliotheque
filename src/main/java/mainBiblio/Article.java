@@ -1,10 +1,11 @@
 package mainBiblio;
 
-public class Article {
+
+public class Article{
 
 	protected String nom;
 	protected String genre;
-	protected boolean dispo = true;
+	private boolean dispo = true;
 	protected String type;
 
 	public Article(String nom, String genre, String type) {
@@ -33,5 +34,6 @@ public class Article {
 		// TODO Auto-generated method stub
 		return type;
 	}
+
 	
 }

@@ -15,7 +15,7 @@ public class Video extends Article{
 	}
 	
 	public String toString() {
-		return nom + ", " + genre + " réalisé par " + realisateur + " -->" + (dispo?"Disponible":"Pris");
+		return nom + ", " + genre + " réalisé par " + realisateur;
 	}
 
 
