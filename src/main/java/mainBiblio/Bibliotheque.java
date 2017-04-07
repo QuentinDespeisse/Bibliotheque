@@ -20,6 +20,7 @@ public class Bibliotheque {
 	
 	public static Bibliotheque getInstance() {return instance;}
 	
+
 	public List<Article> getLivreGenre(String genre) {
 		List<Article> articlesGenre = new ArrayList<Article>();
 		for(Article livre: listArticle ){
@@ -29,6 +30,7 @@ public class Bibliotheque {
 		return articlesGenre;
 	}
 	
+
 	public List<Article> getLivreNom(String nom) {
 		List<Article> articlesNom = new ArrayList<Article>();
 		for(Article livre: listArticle ){
@@ -38,6 +40,7 @@ public class Bibliotheque {
 		return articlesNom;
 	}
 	
+
 	public List<Article> getLivreAuteur(String auteur) {
 		List<Article> articlesAuteur = new ArrayList<Article>();
 		for(Article livre: listArticle ){
@@ -47,6 +50,7 @@ public class Bibliotheque {
 		return articlesAuteur;
 	}
 	
+
 	public void ajouterReservation(Article article, Client client) {
 		reservation.put(client, article);
 	}
@@ -70,6 +74,7 @@ public class Bibliotheque {
 	
 	public void ajouterSuggestion(String titre) {listSuggestion.add(titre);}
 	
+
 	public void addArticles(Article article) {listArticle.add(article);}
 	
 }
