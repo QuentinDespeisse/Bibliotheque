@@ -15,5 +15,9 @@ public class Livre extends Article {
 	public String getAuteur() {
 		return auteur;
 	}
+	
+	public String toString() {
+		return nom + ", " + genre + " écrit par " + auteur;
+	}
 
 }

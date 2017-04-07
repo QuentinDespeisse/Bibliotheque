@@ -13,6 +13,10 @@ public class Video extends Article{
 	public String getRealisateur() {
 		return realisateur;
 	}
+	
+	public String toString() {
+		return nom + ", " + genre + " réalisé par " + realisateur;
+	}
 
 
 }

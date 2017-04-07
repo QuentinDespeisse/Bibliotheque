@@ -2,10 +2,10 @@ package mainBiblio;
 
 public class Article {
 
-	private String nom;
-	private String genre;
+	protected String nom;
+	protected String genre;
 	private boolean dispo = true;
-	private String type;
+	protected String type;
 
 	public Article(String nom, String genre, String type) {
 		this.nom = nom;
