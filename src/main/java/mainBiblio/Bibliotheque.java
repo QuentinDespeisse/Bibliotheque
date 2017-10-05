@@ -105,6 +105,4 @@ public class Bibliotheque {
 		}
 		return listArticle;		
 	}
-
-	
 }

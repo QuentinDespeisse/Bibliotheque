@@ -18,5 +18,4 @@ public class Video extends Article{
 		return nom + ", " + genre + " réalisé par " + realisateur;
 	}
 
-
 }

@@ -10,8 +10,6 @@ public class Livre extends Article {
 		this.auteur = auteur;
 	}
 	
-	
-
 	public String getAuteur() {
 		return auteur;
 	}
