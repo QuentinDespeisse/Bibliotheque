@@ -3,7 +3,6 @@ package mainBiblio;
 public class gererBiblio {
 	
 	public gererBiblio() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Client ajouterClient (String nom, String prenom, String email, int numCl, String tel) {
